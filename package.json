@@ -1,0 +1,31 @@
+{
+  "name": "reward-coin",
+  "version": "1.0.0",
+  "description": "reward coin",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pgjoslyn/Reward-Coin.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    ""
+  ],
+  "author": "Peter Joslyn",
+  "license": "ISC",
+  "dependencies": {
+    "gulp-dependency-install": "0.0.8",
+    "normalize.css": "^7.0.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.0.1"
+  }
+}
