@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="css/flexboxgrid.css">
   <link rel="stylesheet" href="css/font-awesome.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -45,12 +48,8 @@
           <h1 id='titleInfo'>
             <span class="primary-text">Reward</span> Coin </h1>
           <p id='titleP'>A Cutting Edge way to Reward yourself</p>
-          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#videoModal">
-            <button id="videoBtn" onclick="scrollUser()" class='fadeIn animated'>
-              Watch our Video
-              <span class="badge badge-primary launch-modal"></span>
-            </button>
-          </a>
+          <button id="videoBtn" class=" video fadeIn animated" data-video="https://www.youtube.com/embed/kubGCSj5y3k" data-toggle="modal"
+            data-target="#videoModal">Watch Our Video</button>
           <a href="/whitePaper.pdf">
             <button id="videoBtn" class='fadeIn animated'>
               Read Our White Paper
@@ -63,18 +62,19 @@
   </section>
 
   <!-- VIDEO MODAL -->
-
-
-  <section id='infoVideo'>
-    <div id='videoContainer' class="container">
-      <div id='videoTitleContainer' class="container">
-        <h1 id='videoTitle' >Watch our Video to Learn More!</h1>
-      </div>
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe id='videoFrame' width="1000" height="550" src="https://www.youtube.com/embed/kubGCSj5y3k" frameborder="0" allow="autoplay; encrypted-media"
-            allowfullscreen></iframe>
+  <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div id='cancel-body'>
+          </div>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe width="100%" height="500" src="" frameborder="3" allowfullscreen></iframe>
+          </div>
         </div>
       </div>
+    </div>
+  </div>
 
   </section>
   <!-- FEATURES -->
@@ -209,6 +209,40 @@
       $('#showcaseInfo').toggle();
       $('#titleInfo , #titleP').slideDown(500).addClass('animated slideInUp');
     });
+
+    //video modal
+    // $(function () {
+    //   $(".video").click(function () {
+    //     var theModal = $(this).data("target"),
+    //       videoSRC = $(this).attr("data-video"),
+    //       videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
+    //     $(theModal + ' iframe').attr('src',
+    //       videoSRCauto);
+    //     $(theModal + ' button.close').click(function () {
+    //       $(theModal + ' iframe').attr('src', videoSRC);
+    //     });
+    //   });
+    // });
+
+    // $('#videoModal').on('hidden.bs.modal', function (e) {
+    //   $('#videoModal').find('iframe').attr('src', '');
+    // });
+    $(function () {
+      $(".video").click(function () {
+        var theModal = $(this).data("target"),
+          videoSRC = $(this).attr("data-video"),
+          videoSRCauto = videoSRC;
+        $(theModal + ' iframe').attr('src', videoSRCauto);
+        $(theModal).on('click', function() {
+          $(theModal + ' iframe').attr('src', '');
+        });
+      });
+    });
+    $('#videoModal').on('hidden.bs.modal', function (e) {
+      $('#videoModal').find('iframe').attr('src',
+        '');
+    });
+
     // Add url parameter or replace if already exists.
     function addUrlParam(url, key, value) {
       var newParam = key + "=" + value;

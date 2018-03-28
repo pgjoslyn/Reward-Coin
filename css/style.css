@@ -121,6 +121,19 @@ img{
 }
 
 /* VIDEO MODAL */
+.modal-content {
+  margin-top: 15%;
+}
+#videoClose {
+
+  background-color: white;
+}
+
+
+#cancel-body {
+  display: block;
+  width: 100%;
+}
 
 #videoTitleContainer {
   display: inline;
@@ -147,6 +160,10 @@ img{
 
 #videoFrame {
   margin: 4% 25% 1% 25%;
+}
+
+div.modal-body, div.modal-content {
+  background-color: black;
 }
 
 /* FEATURES */
