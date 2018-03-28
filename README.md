@@ -1,7 +1,9 @@
-# Reward-Coin
+# Reward-Coin Marketing Website
 
-To use:
+How to set up the dev server and live reload for development: 
 
-install using npm install
+1) Download project from Github
 
-use cmd line and run "gulp"
+2) Open a git bash in the downloaded folder and run 'npm install' 
+
+3) Use cmd line and run "gulp" to activate Gulp Task Runner which will serve the website for you locally and enable live reload on save.
